@@ -1,14 +1,18 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner in = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int A = in.nextInt();
-        int B = in.nextInt();
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
 
-        int C = in.nextInt();
+        int C = Integer.parseInt(br.readLine());
 
         int min = 60 * A + B;   // 시 -> 분
         min += C;
