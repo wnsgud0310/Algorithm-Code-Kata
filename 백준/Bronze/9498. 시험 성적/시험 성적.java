@@ -3,20 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int A = sc.nextInt();
-        sc.close();
-        if(A>=90){
+        int jumsu = sc.nextInt();
+
+        if (jumsu >= 90 && jumsu <= 100) {
             System.out.println("A");
-        } else if (A>=80) {
+        } else if (jumsu >= 80) {
             System.out.println("B");
-        } else if (A>=70) {
+        } else if (jumsu >= 70) {
             System.out.println("C");
-        } else if (A>=60) {
+        } else if (jumsu >= 60) {
             System.out.println("D");
-        }else {
+        } else{
             System.out.println("F");
         }
-
-
     }
 }
