@@ -1,26 +1,17 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int A = sc.nextInt(); // 현재 시
+        int B = sc.nextInt(); // 현재 분
+        int C = sc.nextInt(); // 요리 시간 (분 단위)
 
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int A = Integer.parseInt(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
+        int totalMinutes = A * 60 + B + C; // 전체 시간(분) 계산
+        int endHour = (totalMinutes / 60) % 24; // 종료 시각 (24시간 형식 유지)
+        int endMinute = totalMinutes % 60; // 종료 분
 
-        int C = Integer.parseInt(br.readLine());
-
-        int min = 60 * A + B;   // 시 -> 분
-        min += C;
-
-        int hour = (min / 60) % 24;
-        int minute = min % 60;
-
-        System.out.println(hour + " " + minute);
-
+        System.out.println(endHour + " " + endMinute);
     }
 }
