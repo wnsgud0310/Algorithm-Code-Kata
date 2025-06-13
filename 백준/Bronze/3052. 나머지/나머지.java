@@ -1,32 +1,17 @@
 import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Main {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Set<Integer> set = new HashSet<>();
 
-		Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 10; i++) {
+            set.add(sc.nextInt() % 42);
+        }
 
-		int[] arr = new int[10]; // 숫자 10개 입력할 배열 선언
-		int count = 0; 
-
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = sc.nextInt() % 42;
-
-			boolean check = false; 
-			for (int j = 0; j < i; j++) {
-				if (arr[i] == arr[j]) {
-					check = true;
-					break;
-				} else {
-					check = false;
-				}
-			}
-
-			if (check == false) {
-				count++;
-			}
-
-		}
-
-		System.out.println(count);
-	}
+        System.out.println(set.size());
+        sc.close();
+    }
 }
