@@ -1,11 +1,17 @@
-import java.util.*;
-
 class Solution {
     public int solution(int[] numbers) {
-        
-        //01) 오름차순 정렬후 마지막 & 마지막-1 인덱스 접근해 해결
-        Arrays.sort(numbers);
-        return numbers[numbers.length-1]* numbers[numbers.length-2];
+        int answer = 0;
+        int max = 0;
 
+        for(int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] * numbers[j] > max) {
+                    max = numbers[i] * numbers[j];
+                }
+            }
+        }
+        answer = max;
+
+        return answer;
     }
 }
